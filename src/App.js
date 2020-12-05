@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Main from './containers/Main/Main';
+import RogueBlitz from "../src/containers/Portfolio-Pages/RogueBlitz";
+import NoteDrop from "../src/containers/Portfolio-Pages/NoteDrop";
+import NoteTaker from "../src/containers/Portfolio-Pages/NoteTaker";
+import WorkPlanner from "../src/containers/Portfolio-Pages/WorkPlanner";
+import FitnessTracker from "../src/containers/Portfolio-Pages/FitnessTracker";
+import TeamGenerator from "../src/containers/Portfolio-Pages/TeamGenerator";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+
+      <Route exact path="/" component={Main} />
+      <Route exact path="/main" component={Main} />
+      <Route exact path="/rogueblitz" component={RogueBlitz} />
+      <Route exact path="/notedrop" component={NoteDrop} />
+      <Route exact path="/notetaker" component={NoteTaker} />
+      <Route exact path="/workplanner" component={WorkPlanner} />
+      <Route exact path="/fitnesstracker" component={FitnessTracker} />
+      <Route exact path="/team-generator" component={TeamGenerator} />
+
+    </Router>
   );
 }
 
